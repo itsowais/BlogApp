@@ -9,11 +9,7 @@ class App extends Component {
     return (
       <div className="App">
       <NavBare/>
-      <div className="image-slide" style={{
-      backgroundImage: url('https://media1.popsugar-assets.com/files/thumbor/v5edVnJqsKiEyVVPPUK32HuyFbI/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2017/01/23/969/n/1922153/0eb5afedadc299e4_GettyImages-505311514.jpg'),
-      backgroundSize: 'cover',
-      backgroundPosition: 'center'}}>
-      </div>
+      
       {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <header className="App-header">
         <h1 className="App-title">Blog No 1</h1>
