@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.jpg';
 import logo1 from './logo1.png'
 import './App.css';
-import {Thumbnail,Carousel,Navbar,NavItem,Grid,Row,Col,Button,NavDropdown,Nav,MenuItem,} from 'react-bootstrap'
+import {Thumbnail,Carousel,Navbar,NavItem,Grid,Row,Col,NavDropdown,Nav,MenuItem,} from 'react-bootstrap'
+import { Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, Button } from 'reactstrap';
 import NavBare from'./componet/navbar'
 import Slider from './componet/slider'
 class App extends Component {
@@ -10,8 +12,8 @@ class App extends Component {
     return (
       <div className="App">
       <NavBare/>
-      
-  <img className='w-100' src={logo} alt="hello"/>
+      <Slider/>
+  {/* <img className='w-100' src={logo} alt="hello"/> */}
   
       {/* <img className=" w-100" src={logo} alt="First slide"/> */}
       {/* <img src={logo} className="App-logo" alt="logo" /> */}

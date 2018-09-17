@@ -1,60 +1,96 @@
 import React, { Component } from 'react';
-import {Carousel,Navbar,NavItem,NavDropdown,Nav,MenuItem,} from 'react-bootstrap'
-import logo from '../logo.svg'
-class Slider extends React.Component {
-    constructor(props, context) {
-      super(props, context);
-  
-      this.handleSelect = this.handleSelect.bind(this);
-  
-      this.state = {
-        index: 0,
-        direction: null
-      };
-    }
-  
-    handleSelect(selectedIndex, e) {
-      alert(`selected=${selectedIndex}, direction=${e.direction}`);
-      this.setState({
-        index: selectedIndex,
-        direction: e.direction
-      });
-    }
-  
-    render() {
-      const { index, direction } = this.state;
-  
-      return (
-        <Carousel
-          activeIndex={index}
-          direction={direction}
-          onSelect={this.handleSelect}
-        >
-          <Carousel.Item>
-            <img width={900} height={500} alt="900x500" src={logo} />
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img width={900} height={500} alt="900x500" src={logo} />
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img width={900} height={500} alt="900x500" src={logo} />
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-      );
-    }
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption
+} from 'reactstrap';
+import slideone from '../slideone.jpg'
+const items = [
+  {
+    src: 'https://static1.squarespace.com/static/56e2e0c520c6472a2586add2/t/59c2d9dbe5dd5b108152ec35/1505941985159/1000x400-womenintech-feat4-TSG.jpg',
+    altText: 'Slide 1',
+    caption: 'Slide 1'
+  },
+  {
+    src: 'https://static1.squarespace.com/static/56e2e0c520c6472a2586add2/t/59c2d8d7f6576e86059e5c74/1505941727718/1000x400-womenintech-feat3-TSG.jpg',
+    altText: 'Slide 2',
+    caption: 'Slide 2'
+  },
+  {
+    src: 'https://static1.squarespace.com/static/56e2e0c520c6472a2586add2/t/59c2d88f03596e4514882b90/1505941655810/1000x400-womenintech-feat1-TSG.jpg',
+    altText: 'Slide 3',
+    caption: 'Slide 3'
   }
-  export default Slider;
+];
+
+class Slider extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { activeIndex: 0 };
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+    this.goToIndex = this.goToIndex.bind(this);
+    this.onExiting = this.onExiting.bind(this);
+    this.onExited = this.onExited.bind(this);
+  }
+
+  onExiting() {
+    this.animating = true;
+  }
+
+  onExited() {
+    this.animating = false;
+  }
+
+  next() {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  previous() {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  goToIndex(newIndex) {
+    if (this.animating) return;
+    this.setState({ activeIndex: newIndex });
+  }
+
+  render() {
+    const { activeIndex } = this.state;
+
+    const slides = items.map((item) => {
+      return (
+        <CarouselItem
+          onExiting={this.onExiting}
+          onExited={this.onExited}
+          key={item.src}
+        >
+          <img className='w-100'src={item.src} alt={item.altText}/>
+          <CarouselCaption />
+        </CarouselItem>
+      );
+    });
+
+    return (
+      <Carousel
+        activeIndex={activeIndex}
+        next={this.next}
+        previous={this.previous}
+      >
+        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+        {slides}
+        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+      </Carousel>
+    );
+  }
+}
+
+
+export default Slider;
