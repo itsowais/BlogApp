@@ -7,6 +7,7 @@ import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap';
 import NavBare from'./componet/navbar'
 import Slider from './componet/slider'
+import CardPost from './componet/card'
 class App extends Component {
   render() {
     return (
@@ -18,13 +19,13 @@ class App extends Component {
       {/* <img className=" w-100" src={logo} alt="First slide"/> */}
       {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <header className="App-header">
-        <h1 className="App-title">Blog No 1</h1>
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome to MY BLOG</h1>
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <CardPost/>
       </div>
     );
   }
