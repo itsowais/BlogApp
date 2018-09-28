@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from '../../logo.jpg';
+import logo from '../../logo.svg';
 import logo1 from '../../logo1.png'
 import '../../App.css';
-import {Thumbnail,Carousel,Navbar,NavItem,Grid,Row,Col,NavDropdown,Nav,MenuItem,} from 'react-bootstrap'
+import {Image,Thumbnail,Jumbotron,Label,Carousel,Navbar,NavItem,Grid,Row,Col,NavDropdown,Nav,MenuItem,} from 'react-bootstrap'
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button,CardDeck,CardGroup } from 'reactstrap';
 import NavBare from'../navbar'
@@ -14,8 +14,31 @@ class About extends Component {
     return (
       <div className="App">
       <NavBare/>
-      <div className='space'/>
-      <h1 className="App-title">About Us</h1>
+      <Jumbotron>
+
+  <code><h1><b> About Us</b></h1></code>
+  <p>
+      <code><h2>We believe to work together hello world its goodd</h2></code>
+   </p>
+  <p>
+    <Button  className='primary'>Learn more</Button>
+  </p>
+</Jumbotron>
+      <Grid>
+  <Row>
+    <Col xs={6} md={4}>
+    </Col>
+    <Col xs={6} md={4}>
+      <Image src={logo} circle />
+    </Col>
+    <Col xs={6} md={4}>
+    </Col>
+  </Row>
+</Grid>
+<p>
+  In my intial years in university i was learning java i completed core concepts and oop but stumbled my way to a book called ‘if hemingway wrote javascript’ that pulled my attention towards javascript and when i completed that book i was in love with javascript since then i have been working on various frameworks of javascript but when the whole world is talking about AI and Machine Learning boom i thought to put my contribution as well so i started to learn pyhton and machine learning as well.
+For me every problem is an opportunity, this is my entrepreneurial part of personality that helps me solve problem in a way that it can provide people some opportunity. Working with team is something i always preferred because you can learn from everyone in your team.For me when you are leading a team you have to lead by example.
+  </p>
       <CardDeck className="w-100 justify-content-center">
       <CardPost/>
       <CardPost/>
