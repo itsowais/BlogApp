@@ -15,7 +15,7 @@
   color: white;
 }
 
-.App-title {
+.App-title { 
   font-size: 2.5em;
   font-family: 'Titillium Web', Roboto
 
@@ -28,4 +28,7 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+.space{
+  margin: 20px;
 }

@@ -33,11 +33,12 @@ function MediaCard(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="headline" component="h2">
-            Lizard
+            BlockChain
           </Typography>
           <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            A technology that help us keep track of our assets in more private and secure way it use
+            public ledger to maintain the record the first full fledge implementation of this technology
+            is bitcoin
           </Typography>
         </CardContent>
       </CardActionArea>
