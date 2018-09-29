@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../../logo.svg';
+import logo from '../../photo.JPG';
 import logo1 from '../../logo1.png'
 import '../../App.css';
 import {Image,Thumbnail,Jumbotron,Label,Carousel,Navbar,NavItem,Grid,Row,Col,NavDropdown,Nav,MenuItem,} from 'react-bootstrap'
@@ -29,28 +29,30 @@ class About extends Component {
     <Col xs={6} md={4}>
     </Col>
     <Col xs={6} md={4}>
-      <Image src={logo} circle />
+      <Image src={logo} className='rounded-circle' style={{height:250,width:250}} />
     </Col>
     <Col xs={6} md={4}>
     </Col>
   </Row>
 </Grid>
-<p>
+
+<code><h1><b> Owais Raza</b></h1></code>
+<code><h3>Software Engineer</h3></code>
+<Grid>
+  <Row>
+    <Col xs={1} md={1}>
+    </Col>
+    <Col xs={10} md={10}>
+    <code><p><b>
   In my intial years in university i was learning java i completed core concepts and oop but stumbled my way to a book called ‘if hemingway wrote javascript’ that pulled my attention towards javascript and when i completed that book i was in love with javascript since then i have been working on various frameworks of javascript but when the whole world is talking about AI and Machine Learning boom i thought to put my contribution as well so i started to learn pyhton and machine learning as well.
 For me every problem is an opportunity, this is my entrepreneurial part of personality that helps me solve problem in a way that it can provide people some opportunity. Working with team is something i always preferred because you can learn from everyone in your team.For me when you are leading a team you have to lead by example.
-  </p>
-      <CardDeck className="w-100 justify-content-center">
-      <CardPost/>
-      <CardPost/>
-      <CardPost/>
-      <CardPost/>
-      <CardPost/>
-      <CardPost/>
-      </CardDeck>
-  {/* <img className='w-100' src={logo} alt="hello"/> */}
-  
-      {/* <img className=" w-100" src={logo} alt="First slide"/> */}
-      {/* <img src={logo} className="App-logo" alt="logo" /> */}
+</b>  </p></code>
+
+    </Col>
+    <Col xs={1} md={1}>
+    </Col>
+  </Row>
+</Grid>
         <hr/>
         <p className="App-intro">
            <code>&copy; All Rights are reserved to owais 2018 code</code>
