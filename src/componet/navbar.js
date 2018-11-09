@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Navbar,NavItem,NavDropdown,Nav,MenuItem,} from 'react-bootstrap'
 import logo from '../logo.svg';
-
+import {Link} from 'react-router-dom'
 class NavBare extends Component {
   render() {
     return (
@@ -17,25 +17,26 @@ class NavBare extends Component {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active" >
-              <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
+              <Link to='/' className="nav-link" >Home <span className="sr-only">(current)</span></Link>
             </li>
             <li className="nav-item active">
-              <a className="nav-link" href="/">About<span className="sr-only">(current)</span></a>
+             <Link to='/about' className="nav-link" >About<span className="sr-only">(current)</span></Link>
             </li>
             <li className="nav-item active">
-              <a className="nav-link" href="/">Blog Post<span className="sr-only">(current)</span></a>
+            <Link to='/blog'className="nav-link" >Blog Post<span className="sr-only">(current)</span></Link>
             </li>
             <li className="nav-item active">
-              <a className="nav-link" href="/">Contact<span className="sr-only">(current)</span></a>
+             <Link to='/contact' className="nav-link" >Contact<span className="sr-only">(current)</span></Link>
             </li>
           </ul>
           <form className="form-inline my-2 my-lg-0">
             <input className="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline my-2 my-sm-0 " type="submit">Search</button>
           </form>
+         
         </div>
       </nav>
-
+      
       </div>
     );
   }
