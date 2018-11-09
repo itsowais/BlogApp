@@ -9,10 +9,12 @@ import { Card, CardImg, CardText, CardBody,
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import Home from './componet/pages/home'
 import About from './componet/pages/aboutus'
+import BlogPost from './componet/pages/blogpost'
+import Contact from './componet/pages/contactus'
 class App extends Component {
   render() {
     return (
-  <About/>
+  <Contact/>
     );
   }
 }
