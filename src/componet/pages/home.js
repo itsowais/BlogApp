@@ -15,7 +15,7 @@ class Home extends Component {
       <div className="App">
       <NavBare/>
       <Slider/>
-      <h1 className="App-title">Welcome to MY BLOG</h1>
+      <code><h1 className="App-title">Welcome to MY BLOG</h1></code>
       <CardDeck className="w-100 justify-content-center">
       <CardPost/>
       <CardPost/>

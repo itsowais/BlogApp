@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import {Navbar,NavItem,NavDropdown,Nav,MenuItem,} from 'react-bootstrap'
 import logo from '../logo.svg';
-import {Link} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Home from './pages/home'
+import About from './pages/aboutus'
+import BlogPost from './pages/blogpost'
+import Contact from './pages/contactus'
 class NavBare extends Component {
   render() {
     return (
+      
       <div className="App">
        <nav className="navbar navbar-expand-lg navbar navbar-dark bg-primary">
         {/* <a className="navbar-brand" href="/">Navbar</a> */}
@@ -33,11 +38,13 @@ class NavBare extends Component {
             <input className="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline my-2 my-sm-0 " type="submit">Search</button>
           </form>
-         
         </div>
       </nav>
       
+
+          
       </div>
+      
     );
   }
 }
